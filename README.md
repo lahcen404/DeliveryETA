@@ -1,82 +1,82 @@
 # 🚚 DeliveryETA
 
-Application Streamlit utilisant le Machine Learning pour prédire le temps de livraison d’une commande.
+A Streamlit application that uses Machine Learning to predict delivery time.
 
-L’utilisateur renseigne les informations relatives au livreur, à la commande, à la météo et au trafic. Le modèle estime ensuite la durée de livraison en minutes.
+Users enter information about the delivery person, order, weather, and traffic. The model then estimates the delivery duration in minutes.
 
-## Fonctionnalités
+## Features
 
-- Saisie des informations de livraison.
-- Prise en compte de la distance et du délai de récupération.
-- Prise en compte de la météo, du trafic et du véhicule.
-- Prédiction du temps de livraison.
-- Affichage des métriques du modèle.
-- Visualisation de la distribution des temps de livraison.
+- Enter delivery information.
+- Consider delivery distance and pickup delay.
+- Consider weather, traffic, and vehicle type.
+- Predict delivery time.
+- Display model performance metrics.
+- Visualize delivery time distribution.
 
 ## Dataset
 
-Le dataset utilisé est disponible dans :
+The dataset is available at:
 
 ```text
 data/selected_features_data.csv
 ```
 
-Les principales variables utilisées sont :
+The main features include:
 
-- Âge et note du livreur
-- Nombre de livraisons simultanées
-- Distance en kilomètres
-- Conditions météorologiques
-- Densité du trafic
-- Type de véhicule
-- Jour de la semaine
-- Heure de commande
-- Heure de récupération
-- Délai de récupération
-- Mois
+- Delivery person's age and rating
+- Number of multiple deliveries
+- Distance in kilometers
+- Weather conditions
+- Road traffic density
+- Vehicle type
+- Day of the week
+- Order hour
+- Pickup hour
+- Pickup delay
+- Month
 
-La variable cible est :
+The target variable is:
 
 ```text
 Time_taken(min)
 ```
 
-## Démarche
+## Methodology
 
-### Préparation des données
+### Data Preparation
 
-- Sélection des variables pertinentes.
-- Conversion du mois en valeur numérique.
-- Normalisation des variables numériques.
-- Encodage One-Hot des variables catégorielles.
-- Respect de l’ordre exact des variables utilisé lors de l’entraînement.
+- Selection of relevant features.
+- Conversion of month names into numerical values.
+- Scaling of numerical features.
+- One-Hot Encoding of categorical features.
+- Preservation of the exact feature order used during training.
 
-### Modèle
+### Model
 
-Le modèle utilisé est un `Random Forest Regressor`, optimisé avec `RandomizedSearchCV`.
+The model used is a `Random Forest Regressor`, optimized with `RandomizedSearchCV`.
 
-Les fichiers du modèle sont stockés dans :
+The model files are stored in:
 
 ```text
 models/delivery_eta_pipeline.joblib
 models/scaler.joblib
 ```
 
-## Résultats et métriques
+## Results and Metrics
 
-| Métrique | Résultat |
+| Metric | Result |
 |---|---:|
-| MAE | 3,57 minutes |
-| RMSE | 4,55 minutes |
-| R² | 76,73 % |
+| MAE | 3.57 minutes |
+| RMSE | 4.55 minutes |
+| R² | 76.73% |
 
-### Interprétation
+### Interpretation
 
-- **MAE** : erreur moyenne d’environ 3,57 minutes.
-- **RMSE** : erreur quadratique moyenne de 4,55 minutes.
-- **R²** : le modèle explique 76,73 % de la variance des temps de livraison.
+- **MAE**: The average prediction error is approximately 3.57 minutes.
+- **RMSE**: The root mean squared error is 4.55 minutes.
+- **R²**: The model explains 76.73% of the variance in delivery times.
 
-## Technologies utilisées
+## Technologies
 
 - Python
 - Streamlit
@@ -88,48 +88,48 @@ models/scaler.joblib
 
 ## Installation
 
-### Prérequis
+### Requirements
 
-- Python 3.9 ou supérieur
+- Python 3.9 or higher
 - Git
 
-### Cloner le projet
+### Clone the repository
 
 ```bash
-git clone <URL_DU_REPOSITORY>
+git clone <REPOSITORY_URL>
 cd DeliveryETA
 ```
 
-### Créer un environnement virtuel
+### Create a virtual environment
 
-Sous Linux :
+On Linux:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### Installer les dépendances
+### Install dependencies
 
 ```bash
 pip install streamlit pandas numpy joblib matplotlib scikit-learn
 ```
 
-## Exécution
+## Run the Application
 
-Depuis la racine du projet :
+From the project root directory:
 
 ```bash
 streamlit run app/app.py
 ```
 
-L’application sera accessible à l’adresse :
+The application will be available at:
 
 ```text
 http://localhost:8501
 ```
 
-## Structure du projet
+## Project Structure
 
 ```text
 DeliveryETA/
@@ -147,18 +147,18 @@ DeliveryETA/
 └── README.md
 ```
 
-## Captures d’écran
+## Screenshots
 
-### Formulaire de prédiction
+### Prediction Form
 
-![Formulaire de prédiction](screenshots/prediction.png)
+![Prediction Form](screenshots/prediction.png)
 
-### Performances du modèle
+### Model Performance
 
-![Performances du modèle](screenshots/performance.png)
+![Model Performance](screenshots/performance.png)
 
-### Distribution des temps de livraison
+### Delivery Time Distribution
 
-![Distribution des temps de livraison](screenshots/distribution.png)
+![Delivery Time Distribution](screenshots/distribution.png)
 
-> Ajoutez les captures d’écran dans le dossier `screenshots/` avec les noms indiqués ci-dessus.
+> Add the screenshots to the `screenshots/` directory using the filenames shown above.

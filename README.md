@@ -161,4 +161,3 @@ DeliveryETA/
 
 ![Delivery Time Distribution](screenshots/distribution.png)
 
-> Add the screenshots to the `screenshots/` directory using the filenames shown above.
